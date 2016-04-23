@@ -57,10 +57,12 @@ Configuration based oracle database utility to compare delimited files with simi
   422|30|08-Mar-2016|FILE1_NAME_EXT_SRC|16|||DELETED|||
   ...
   ```
-###Assumptions (A) / Restrictions (R) / Features (F):
+###Assumptions (A) / Restrictions (R) / Features (F) / Information (I):
 * _(R)_ The files should have a unique key available for comparision.
 
 * _(A)_ The maximum number of keys to determine a unique record is 3.
+
+* _(I)_ `drop0 / drop1 / drop2` are base configurations which are used for cloning. The user shouldn't try to use these configuration as drop name.
 
 * _(R)_ If the configuration is re-cloned, the previous data generated against the configuration is deleted. However the old UNIX diff files would still be there unless the comparison is rerun, after which they would be overwritten as well.
 
