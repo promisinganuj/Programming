@@ -43,3 +43,18 @@ select trx_date
                ) c
       ) d
  where grp_mem_cnt = 5;
+ 
+ 
+ -- Simplified
+ select trx_date
+      ,id
+ from (
+        select c.*
+              ,count(*) over (partition by id, grp) grp_mem_cnt
+          from (
+                 select a.*
+                       ,trx_date - to_date('01-Jan-2016', 'DD-Mon-YYYY') - row_number() over (partition by id order by trx_date) grp
+                  from tbl_5_cons_dates a
+               ) c
+      ) d
+ where grp_mem_cnt = 5;
