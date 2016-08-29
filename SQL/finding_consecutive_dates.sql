@@ -58,3 +58,5 @@ select trx_date
                ) c
       ) d
  where grp_mem_cnt = 5;
+
+https://community.oracle.com/thread/1007478?start=0&tstart=0
