@@ -1,4 +1,4 @@
-create or replace procedure prc_gen_ref_data_proc (
+create or replace procedure prc_gen_merge_proc (
    p_proc_name       varchar2
   ,p_table_name      varchar2
   ,p_ext_table_name  varchar2
@@ -119,7 +119,7 @@ begin
 
   dbms_output.put_line(l_proc_template);
 
-end prc_gen_ref_data_proc;
+end prc_gen_merge_proc;
 /
 
 sho err
